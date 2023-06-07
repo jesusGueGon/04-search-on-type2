@@ -1,0 +1,48 @@
+<ul class="list-group">
+  <!-- <li routerLink="home"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: true}"
+    class="list-group-item">
+    Home Page
+  </li>
+  <li routerLink="about"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: true}"
+    class="list-group-item">
+    About Page
+  </li>
+  <li routerLink="contact"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: true}"
+    class="list-group-item">
+    About Page
+  </li> -->
+  <li
+    class="list-group-item" (click)="takeUniversities('spain')">
+    España
+  </li>
+  <li
+    class="list-group-item" (click)="takeUniversities('united kingdom')">
+    Reino Unido
+  </li>
+  <li
+    class="list-group-item" (click)="takeUniversities('portugal')">
+    Portugal
+  </li>
+</ul>
+
+<hr>
+
+<div *ngIf="arrUniversidades.length === 0; else table" class="alert alert-warning text-center">
+  No hay países que mostrar
+</div>
+
+<ng-template #table>
+  <table class="table table-hover border">
+    <tbody>
+      <tr *ngFor="let university of arrUniversidades; let i = index" >
+        <td>{{ university.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
